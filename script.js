@@ -172,7 +172,7 @@ function typeLetter() {
 }
 
 // --- 7. Photo Slideshow ---
-const photos = ['photo1.jpg', 'photo2.jpg', 'photo3.jpg'];
+const photos = ['photo1.jpeg', 'photo2.jpeg', 'photo3.jpeg'];
 let currentPhotoIndex = 0;
 
 function startSlideshow() {
