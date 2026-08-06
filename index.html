@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Hamda!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Music -->
+    <audio id="bg-music" loop>
+        <source src="happy-birthday.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Animated Night Sky -->
+    <div class="night-sky" id="sky"></div>
+
+    <!-- Celebration Layer (Balloons, Hearts, Fireworks, Confetti) -->
+    <div id="celebration-container" class="hidden"></div>
+
+    <!-- Screen 1: Intro / Start Button -->
+    <div id="intro-screen" class="screen">
+        <h1 class="glow-text">A Special Surprise for Hamda</h1>
+        <p class="sub-text">Turn your volume up 🎵</p>
+        <button id="start-btn">Click to Start 🎁</button>
+    </div>
+
+    <!-- Screen 2: Countdown Timer -->
+    <div id="countdown-screen" class="screen hidden">
+        <h1 id="timer">5</h1>
+    </div>
+
+    <!-- Screen 3: Main Birthday Celebration -->
+    <div id="main-screen" class="screen hidden">
+        <h1 class="glow-text">Happy Birthday, Hamda! 🎉</h1>
+        
+        <div class="interactive-grid">
+            <!-- 🎂 Animated Birthday Cake -->
+            <div class="cake-container">
+                <div class="cake">
+                    <div class="plate"></div>
+                    <div class="layer layer-bottom"></div>
+                    <div class="layer layer-middle"></div>
+                    <div class="layer layer-top"></div>
+                    <div class="icing"></div>
+                    <div class="candle">
+                        <div class="flame" id="flame"></div>
+                    </div>
+                </div>
+                <p class="instruction">Click the flame to blow out the candle! 🕯️</p>
+            </div>
+
+            <!-- 🎁 Interactive Gift Box -->
+            <div id="gift-container" class="gift-container">
+                <div class="present">
+                    <div class="lid"></div>
+                    <div class="box"></div>
+                </div>
+                <p class="instruction">Click your gift! 🎁</p>
+            </div>
+
+            <!-- 📸 Automatic Photo Slideshow -->
+            <div class="slideshow-wrapper">
+                <div id="slideshow-container" class="slideshow-container">
+                    <img id="slideshow-image" src="photo1.jpg" alt="Memories with Hamda">
+                </div>
+                <p class="instruction">Favorite Memories 📸</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 💌 Personalized Letter Modal -->
+    <div id="letter-modal" class="modal hidden">
+        <div class="letter-content">
+            <h2>To Hamda,</h2>
+            <p id="typed-text"></p>
+            <button id="close-letter">Close Letter</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

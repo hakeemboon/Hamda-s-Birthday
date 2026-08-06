@@ -1,0 +1,371 @@
+/* --- Base Reset & Typography --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0b0c10;
+    color: white;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- Night Sky & Twinkling Stars --- */
+.night-sky {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: -1;
+    background: radial-gradient(circle at bottom, #1b2735 0%, #090a0f 100%);
+}
+
+.star {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    animation: twinkle infinite alternate;
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.2; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1.2); box-shadow: 0 0 5px white; }
+}
+
+/* --- Screens & Display Logic --- */
+.screen {
+    text-align: center;
+    z-index: 10;
+    width: 100%;
+    max-width: 1100px;
+    padding: 20px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+}
+
+.sub-text {
+    font-size: 1.2rem;
+    color: #ff69b4;
+    margin-bottom: 25px;
+}
+
+.glow-text {
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4; }
+    to { text-shadow: 0 0 20px #ff1493, 0 0 35px #ff1493, 0 0 45px #ff1493; }
+}
+
+button {
+    padding: 15px 35px;
+    font-size: 1.3rem;
+    background: linear-gradient(45deg, #ff69b4, #ff1493);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(255, 105, 180, 0.6);
+}
+
+.instruction {
+    margin-top: 15px;
+    font-size: 1rem;
+    color: #ffd700;
+    font-weight: bold;
+}
+
+/* --- Grid Layout for Main Features --- */
+.interactive-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+/* --- 🎂 Animated Birthday Cake --- */
+.cake-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cake {
+    width: 140px;
+    height: 120px;
+    position: relative;
+    margin-top: 30px;
+}
+
+.plate {
+    width: 160px; height: 12px;
+    background: #e0e0e0;
+    border-radius: 10px;
+    position: absolute;
+    bottom: -10px; left: -10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+}
+
+.layer {
+    position: absolute;
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+}
+
+.layer-bottom { height: 40px; bottom: 0; background: #6d4c41; }
+.layer-middle { height: 40px; bottom: 35px; background: #ff80ab; }
+.layer-top { height: 35px; bottom: 70px; background: #fff3e0; }
+
+.candle {
+    width: 12px; height: 35px;
+    background: repeating-linear-gradient(45deg, #fff, #fff 5px, #ff4081 5px, #ff4081 10px);
+    position: absolute;
+    top: 35px; left: 50%;
+    transform: translateX(-50%);
+    border-radius: 3px;
+}
+
+.flame {
+    width: 14px; height: 20px;
+    background: #ff9800;
+    border-radius: 50% 50% 20% 20%;
+    position: absolute;
+    top: -18px; left: -1px;
+    box-shadow: 0 0 10px #ffeb3b, 0 0 20px #ff9800;
+    animation: flicker 0.6s infinite alternate;
+    cursor: pointer;
+}
+
+.flame.out {
+    display: none;
+}
+
+@keyframes flicker {
+    0% { transform: scale(1) rotate(-2deg); }
+    100% { transform: scale(1.15) rotate(2deg); }
+}
+
+/* --- 🎁 Gift Box --- */
+.gift-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.present {
+    width: 120px; height: 100px;
+    position: relative;
+    cursor: pointer;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+.box {
+    width: 100%; height: 100%;
+    background-color: #ff1493;
+    border-radius: 6px;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+
+.box::after {
+    content: ''; position: absolute; left: 50%;
+    transform: translateX(-50%);
+    width: 24px; height: 100%;
+    background-color: #ffd700;
+}
+
+.lid {
+    width: 130px; height: 32px;
+    background-color: #ff69b4;
+    position: absolute;
+    top: -14px; left: -5px;
+    border-radius: 5px;
+    z-index: 2;
+    transition: transform 0.4s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.lid::after {
+    content: ''; position: absolute; left: 50%;
+    transform: translateX(-50%);
+    width: 24px; height: 100%;
+    background-color: #ffd700;
+}
+
+.present:hover .lid {
+    transform: translateY(-20px) rotate(8deg);
+}
+
+/* --- 📸 Photo Slideshow --- */
+.slideshow-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slideshow-container {
+    width: 220px; height: 220px;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 4px solid #ff69b4;
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+    background-color: #111;
+}
+
+#slideshow-image {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+.fade-out { opacity: 0 !important; }
+
+/* --- Celebration Animations (Balloons, Hearts, Confetti, Fireworks) --- */
+#celebration-container {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 5;
+    overflow: hidden;
+}
+
+.balloon {
+    position: absolute;
+    bottom: -100px;
+    width: 35px; height: 45px;
+    border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+    animation: floatUp 8s ease-in infinite;
+    opacity: 0.9;
+}
+
+.heart {
+    position: absolute;
+    bottom: -50px;
+    font-size: 1.8rem;
+    animation: floatUp 7s linear infinite;
+    opacity: 0.8;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0) rotate(-5deg); }
+    100% { transform: translateY(-120vh) rotate(5deg); }
+}
+
+.firework {
+    position: absolute;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    animation: explode 2s ease-out infinite;
+}
+
+@keyframes explode {
+    0% { transform: scale(1); opacity: 1; box-shadow: 0 0 0 0 rgba(255, 255, 255, 1); }
+    100% { 
+        transform: scale(22); 
+        opacity: 0; 
+        box-shadow: 
+            -12px -12px 0 #ff69b4, 12px -12px 0 #ffd700,
+            -12px 12px 0 #00ffff, 12px 12px 0 #ff1493,
+            0px -18px 0 #ffffff, 0px 18px 0 #ffffff,
+            -18px 0px 0 #ffffff, 18px 0px 0 #ffffff;
+    }
+}
+
+.confetti {
+    position: absolute;
+    top: -20px;
+    width: 8px; height: 8px;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+/* --- 💌 Letter Modal --- */
+.modal {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+.modal.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.letter-content {
+    background-color: #fff8e7;
+    color: #333;
+    padding: 35px;
+    border-radius: 12px;
+    max-width: 480px;
+    width: 90%;
+    box-shadow: 0 0 30px rgba(255, 105, 180, 0.5);
+    font-family: 'Georgia', serif;
+    text-align: left;
+}
+
+.letter-content h2 {
+    color: #ff1493;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+#typed-text {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    min-height: 160px;
+    white-space: pre-wrap;
+}
+
+#close-letter {
+    margin-top: 25px;
+    width: 100%;
+    background: #333;
+    box-shadow: none;
+}
+
+/* --- 📱 Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    h1 { font-size: 2.2rem; }
+    .interactive-grid { gap: 30px; }
+    .slideshow-container { width: 180px; height: 180px; }
+    .letter-content { padding: 25px; }
+}
