@@ -128,7 +128,8 @@ flame.addEventListener('click', () => {
 });
 
 // --- 6. Gift Box & Personalized Friendship Letter ---
-const letterMessage = `Happy Birthday! \n\nYou are such an incredible friend and you deserve the absolute best today. I hope this little surprise brings a smile to your face. \n\nWishing you a year filled with joy, success, and amazing memories. Let's celebrate! \n\nBest, \nAbdihakiim`;
+const letterMessage = `Happy belated birthday, Hoodo! ❤️🎂 \n\nI know I’m a day late, but I couldn’t let it pass without wishing my favorite cousin a very happy birthday. \n\n 
+\n\nKeep being the amazing person you are, Hoodo. I love you and I’m always wishing the best for you. ❤️🎉 \n\nHappy birthday once again, my favorite cousin! 🥳🎂💕;
 
 let hasTyped = false;
 
